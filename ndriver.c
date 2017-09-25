@@ -3,7 +3,7 @@
 #include "nlts.h"
 #include "nlts.c"
 #include "cblock.h"
-#include <malloc.h>
+//#include <malloc.h>
 
 
 /* global variable declarations */
@@ -77,6 +77,7 @@ radau5_(&n,deriv_,&x,state,&xend,&h,
         work,&lwork,iwork,&liwork,&lrcont,&idid);
 }
 //Where is the loop holding this all together?, Why doesn't it all just run once?
+//Answer= Canavier sends endtime to radau5_ and it runs it all at once on its own
 if(x<ENDTIME)
 {xend=ENDTIME;
 
